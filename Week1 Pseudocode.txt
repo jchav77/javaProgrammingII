@@ -1,0 +1,59 @@
+Class BankAccount:
+    // Fields
+    firstName: String
+    lastName: String
+    accountID: Integer
+    balance: Decimal
+
+    // Constructor
+    Constructor BankAccount(firstName: String, lastName: String, accountID: Integer):
+        Set this.firstName to firstName
+        Set this.lastName to lastName
+        Set this.accountID to accountID
+        Set this.balance to 0.0
+
+    // Deposit method
+    Method deposit(amount: Decimal):
+        If amount > 0 Then
+            Add amount to balance
+            Print "Deposit successful. New balance: $" + balance
+        Else
+            Print "Invalid deposit amount."
+
+    // Withdrawal method
+    Method withdrawal(amount: Decimal):
+        If amount > 0 AND amount <= balance Then
+            Subtract amount from balance
+            Print "Withdrawal successful. New balance: $" + balance
+        Else
+            Print "Invalid withdrawal amount or insufficient funds."
+
+    // Setters and getters
+    Method setFirstName(firstName: String):
+        Set this.firstName to firstName
+
+    Method getFirstName() Returns String:
+        Return firstName
+
+    Method setLastName(lastName: String):
+        Set this.lastName to lastName
+
+    Method getLastName() Returns String:
+        Return lastName
+
+    Method setAccountID(accountID: Integer):
+        Set this.accountID to accountID
+
+    Method getAccountID() Returns Integer:
+        Return accountID
+
+    // Balance getter
+    Method getBalance() Returns Decimal:
+        Return balance
+
+    // Account summary method
+    Method accountSummary():
+        Print "Account Summary:"
+        Print "Name: " + firstName + " " + lastName
+        Print "Account ID: " + accountID
+        Print "Balance: $" + balance
